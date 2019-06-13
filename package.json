@@ -1,0 +1,23 @@
+{
+  "name": "final_project",
+  "version": "1.0.0",
+  "description": "Final_Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch scss -o css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TomasCybas/Final_Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TomasCybas/Final_Project/issues"
+  },
+  "homepage": "https://github.com/TomasCybas/Final_Project#readme",
+  "dependencies": {
+    "node-sass": "^4.12.0"
+  }
+}
