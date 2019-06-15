@@ -8,6 +8,7 @@ $border-transparent: 1px solid transparent;
 
 body {
   font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
 
 }
 .top-bar {
@@ -39,10 +40,15 @@ body {
 
 }
 .navbar-expand-lg {
+  font-size: 14px;
+  .form-control{
+    width: 200px;
+  }
   .navbar-nav {
     .nav-link {
       padding-left: 15px;
       padding-right: 15px;
+
     }
     li {
       font-size: 14px;
@@ -69,6 +75,22 @@ body {
   top: 50%;
   transform: translateY(-50%);
   left: 2px;
-
+  color: $main-color;
+}
+.search-container {
+  position: relative;
 }
 
+.search {
+  padding-left: 30px;
+  border-radius: 40px;
+  border: $border;
+}
+.cart-btn {
+  border: $border;
+  background: transparent;
+  border-radius: 50%;
+  color: $main-color;
+  width: 38px;
+  height: 38px;
+}
