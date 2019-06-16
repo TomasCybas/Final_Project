@@ -132,6 +132,15 @@ body {
   font-size: 25px;
 }
 
+.progress {
+  background-color: #26292d;
+  height: 30px;
+  .progress-bar {
+    text-align: left;
+    padding-left: 10px;
+  }
+}
+
 
 @include media-breakpoint-up(xs) {
   .navbar-brand {

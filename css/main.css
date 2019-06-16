@@ -92,6 +92,13 @@ body {
   color: #1ccdca;
   font-size: 25px; }
 
+.progress {
+  background-color: #26292d;
+  height: 30px; }
+  .progress .progress-bar {
+    text-align: left;
+    padding-left: 10px; }
+
 .navbar-brand {
   margin: 0 auto; }
 
