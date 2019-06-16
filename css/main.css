@@ -69,3 +69,35 @@ body {
   color: #1ccdca;
   width: 38px;
   height: 38px; }
+
+.carousel-indicators li {
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: background-color; }
+
+.banner-top h6 {
+  font-weight: bold;
+  color: white; }
+
+.banner-top p {
+  color: #777777;
+  font-size: 14px; }
+
+.banner-bottom p {
+  font-size: 14px; }
+
+.banner-icon {
+  color: #1ccdca;
+  font-size: 25px; }
+
+.navbar-brand {
+  margin: 0 auto; }
+
+.carousel-control {
+  color: #1ccdca; }
+
+@media (min-width: 992px) {
+  .carousel-control {
+    font-size: 40px; } }
