@@ -99,6 +99,26 @@ body {
     text-align: left;
     padding-left: 10px; }
 
+.bg-banner {
+  background-image: url(../css/img/bg_header4.jpg);
+  background-size: cover;
+  overflow-x: hidden; }
+
+.nav-tabs .nav-item {
+  border: 1px solid #dee2e6; }
+
+.nav-tabs .nav-link {
+  border-top: 5px solid transparent;
+  text-decoration: none;
+  border-radius: 0; }
+  .nav-tabs .nav-link.active {
+    border-top-color: #1ccdca !important; }
+  .nav-tabs .nav-link:hover {
+    border-color: transparent; }
+
+.border {
+  border: 1px solid #dee2e6; }
+
 .navbar-brand {
   margin: 0 auto; }
 
