@@ -202,8 +202,55 @@ body {
   }
 }
 
+.line {
+  background: rgba(0, 0, 0, 0.07);
+  height: 1px;
+  width:33%;
+}
+.team{
+  border-top: $border;
+  border-bottom: $border;
+  p{
+    font-size: 24px;
+  }
+  .team-block{
+    p{
+      font-size: 14px;
+    }
+  }
+}
+
+.contact-us {
+  border-top: $border;
+  border-bottom: $border;
+  .contact-form-title{
+    color: $main-color;
+    i {
+      font-size: 25px;
+    }
+  }
+  #message {
+    height: 200px;
+  }
+  .submit-btn{
+    background-color: $main-color;
+    color: white;
+    transition: 0.6s;
+    &:hover{
+      background-color: black;
+      transition: 0.6s;
+    }
+  }
+}
 
 
+.bg-dark-red{
+  background-color: #684962;
+}
+
+.round-img {
+  border-radius: 50%;
+}
 
 @include media-breakpoint-up(xs) {
   .navbar-brand {
