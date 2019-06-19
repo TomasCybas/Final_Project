@@ -49,9 +49,6 @@ body {
 
 }
 
-.navbar-toggler {
-
-}
 
 .navbar-expand-lg {
   font-size: 14px;
@@ -227,27 +224,30 @@ body {
     color: $text-grey;
   }
 }
-
-.title {
-  padding-bottom: 5px;
+#googleMap {
+  border-top: 1px solid white;
+}
+.section-title {
+  position:relative;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
   .circle{
     height:11px;
     width:11px;
     border-radius:50%;
     border: 1px solid $main-color;
     position: absolute;
-    left: 5px;
     bottom: -5px;
     z-index: 1;
   }
   .underline{
-    background-color: $text-grey;
+    background-color: rgba(0, 0, 0, 0.2);
     height: 1px;
     width:33%;
     position:absolute;
     bottom:0;
     z-index: -99999;
-
+    left: 11px;
   }
   .line {
     background-color: $main-color;
@@ -256,6 +256,7 @@ body {
     position: absolute;
     bottom: 0;
     transition: 1s;
+    left: 11px;
   }
   &:hover {
     .line {
@@ -319,6 +320,48 @@ body {
   border-radius: 50%;
 }
 
+.btn-black{ /*TODO: works the other way arround, figure out how to fix*/
+  i{
+    transition: 0.1s ease-out 0.1s;
+    &:hover {
+      transition: 0.1s ease-out 0.1s;
+    }
+  }
+  background-color: black;
+  color: white;
+  transition: 0.4s ease-out 0.4s;
+  font-size: inherit;
+  &:hover{
+    color: $main-color;
+    transition: 0.4s ease-out 0.4s;
+  }
+}
+#newsletter{
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  font-size: inherit;
+  height: 35px;
+}
+.btn-newsletter{
+  background-color: $main-color;
+  color: white;
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  font-size: inherit;
+  height: 35px;
+
+}
+hr{
+  border-top: 1px solid rgba(255,255,255,.1)
+}
+
+.footer {
+  font-size: 13px;
+  color: #989898;
+}
+
 @include media-breakpoint-up(xs) {
   .navbar-brand {
     margin: 0 auto;
@@ -327,6 +370,33 @@ body {
     color: $main-color;
   }
 }
+
+.form-inline label {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 0;
+}
+.form-inline .form-group {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  flex-flow: row wrap;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 0;
+}
+.form-inline .form-control {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+}
+
+
 
 @include media-breakpoint-up(sm) {
 

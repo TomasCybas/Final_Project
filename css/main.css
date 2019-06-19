@@ -146,32 +146,38 @@ body {
     font-size: 25px;
     color: #777777; }
 
-.title {
-  padding-bottom: 5px; }
-  .title .circle {
+#googleMap {
+  border-top: 1px solid white; }
+
+.section-title {
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 20px; }
+  .section-title .circle {
     height: 11px;
     width: 11px;
     border-radius: 50%;
     border: 1px solid #1ccdca;
     position: absolute;
-    left: 5px;
     bottom: -5px;
     z-index: 1; }
-  .title .underline {
-    background-color: #777777;
+  .section-title .underline {
+    background-color: rgba(0, 0, 0, 0.2);
     height: 1px;
     width: 33%;
     position: absolute;
     bottom: 0;
-    z-index: -99999; }
-  .title .line {
+    z-index: -99999;
+    left: 11px; }
+  .section-title .line {
     background-color: #1ccdca;
     height: 1px;
     width: 15%;
     position: absolute;
     bottom: 0;
-    transition: 1s; }
-  .title:hover .line {
+    transition: 1s;
+    left: 11px; }
+  .section-title:hover .line {
     background-color: #1ccdca;
     width: 25%;
     transition: 1s; }
@@ -207,11 +213,72 @@ body {
 .round-img {
   border-radius: 50%; }
 
+.btn-black {
+  /*TODO: works the other way arround, figure out how to fix*/
+  background-color: black;
+  color: white;
+  transition: 0.4s ease-out 0.4s;
+  font-size: inherit; }
+  .btn-black i {
+    transition: 0.1s ease-out 0.1s; }
+    .btn-black i:hover {
+      transition: 0.1s ease-out 0.1s; }
+  .btn-black:hover {
+    color: #1ccdca;
+    transition: 0.4s ease-out 0.4s; }
+
+#newsletter {
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  font-size: inherit;
+  height: 35px; }
+
+.btn-newsletter {
+  background-color: #1ccdca;
+  color: white;
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  font-size: inherit;
+  height: 35px; }
+
+hr {
+  border-top: 1px solid rgba(255, 255, 255, 0.1); }
+
+.footer {
+  font-size: 13px;
+  color: #989898; }
+
 .navbar-brand {
   margin: 0 auto; }
 
 .carousel-control {
   color: #1ccdca; }
+
+.form-inline label {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 0; }
+
+.form-inline .form-group {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  flex-flow: row wrap;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 0; }
+
+.form-inline .form-control {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle; }
 
 @media (min-width: 992px) {
   .carousel-control {
