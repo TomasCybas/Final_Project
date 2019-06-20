@@ -519,6 +519,45 @@ hr {
   }
 }
 
+.custom-modal-trigger {
+  position: relative;
+  display: block;
+  .trigger-overlay {
+    position: absolute;
+    background: transparent;
+    color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: 0.6s;
+    i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      font-size: 50px;
+      opacity: 1;
+      transition: 1s;
+    }
+    &:hover{
+      opacity: 0.7;
+      transition: 0.6s;
+      background: $main-color;
+      i {
+        transform: translate(-50%, -50%) rotateZ(120deg);
+        transition: 1s;
+      }
+    }
+  }
+}
+
+#custom_video {
+  border: none;
+}
+
+
 .btn-posts {
   border: 1px solid $main-color;
   width: 100%;
