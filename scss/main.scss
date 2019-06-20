@@ -224,31 +224,36 @@ body {
     color: $text-grey;
   }
 }
+
 #googleMap {
   border-top: 1px solid white;
 }
+
 .section-title {
-  position:relative;
+  position: relative;
   padding-bottom: 10px;
   margin-bottom: 20px;
-  .circle{
-    height:11px;
-    width:11px;
-    border-radius:50%;
+
+  .circle {
+    height: 11px;
+    width: 11px;
+    border-radius: 50%;
     border: 1px solid $main-color;
     position: absolute;
     bottom: -5px;
     z-index: 1;
   }
-  .underline{
+
+  .underline {
     background-color: rgba(0, 0, 0, 0.2);
     height: 1px;
-    width:33%;
-    position:absolute;
-    bottom:0;
+    width: 33%;
+    position: absolute;
+    bottom: 0;
     z-index: -99999;
     left: 11px;
   }
+
   .line {
     background-color: $main-color;
     height: 1px;
@@ -258,6 +263,7 @@ body {
     transition: 1s;
     left: 11px;
   }
+
   &:hover {
     .line {
       background-color: $main-color;
@@ -320,30 +326,35 @@ body {
   border-radius: 50%;
 }
 
-.btn-black{ /*TODO: works the other way arround, figure out how to fix*/
-  i{
+.btn-black { /*TODO: works the other way arround, figure out how to fix*/
+  i {
     transition: 0.1s ease-out 0.1s;
+
     &:hover {
       transition: 0.1s ease-out 0.1s;
     }
   }
+
   background-color: black;
   color: white;
   transition: 0.4s ease-out 0.4s;
   font-size: inherit;
-  &:hover{
+
+  &:hover {
     color: $main-color;
     transition: 0.4s ease-out 0.4s;
   }
 }
-#newsletter{
+
+#newsletter {
   border-right: none;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   font-size: inherit;
   height: 35px;
 }
-.btn-newsletter{
+
+.btn-newsletter {
   background-color: $main-color;
   color: white;
   border-left: none;
@@ -353,8 +364,9 @@ body {
   height: 35px;
 
 }
-hr{
-  border-top: 1px solid rgba(255,255,255,.1)
+
+hr {
+  border-top: 1px solid rgba(255, 255, 255, .1)
 }
 
 .footer {
@@ -380,6 +392,7 @@ hr{
   justify-content: center;
   margin-bottom: 0;
 }
+
 .form-inline .form-group {
   display: -ms-flexbox;
   display: flex;
@@ -390,12 +403,183 @@ hr{
   align-items: center;
   margin-bottom: 0;
 }
+
 .form-inline .form-control {
   display: inline-block;
   width: auto;
   vertical-align: middle;
 }
 
+.recent-post-title {
+  color: #ddd;
+  margin-bottom: 5px;
+}
+
+.recent-post-date {
+  font-size: 12px;
+  color: inherit;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.recent-post-type {
+  font-size: 12px;
+  color: inherit;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.recent-post-img {
+  position: relative;
+  height: auto;
+  display: block;
+  transition: 0.6s;
+
+  .post-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $main-color;
+    color: white;
+    opacity: 0;
+    transition: 0.6s;
+
+    i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+
+    &:hover{
+      opacity:1;
+      transition: 0.6s;
+    }
+
+  }
+}
+
+
+.flicker-img{
+  position: relative;
+  width: 33.333%;
+  float: left;
+  display: block;
+  padding-left: 5px;
+  padding-bottom: 5px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background-color: $main-color;
+  color: white;
+  opacity: 0;
+  transition: 0.4s;
+  i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  &:hover{
+    opacity:1;
+    transition: 0.4s;
+  }
+}
+
+.author-container {
+  position: relative;
+  height: auto;
+  background: white;
+  width: 100%;
+}
+
+.author-img {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+}
+.author-link {
+  a{
+    color: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+    &:hover {
+      text-decoration: none;
+      color: $main-color;
+    }
+  }
+}
+
+.btn-posts {
+  border: 1px solid $main-color;
+  width: 100%;
+  background: black;
+  color: $main-color;
+  font-size: inherit;
+  position: relative;
+  height: 35px;
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.4s;
+
+    &.first {
+      left: 55px;
+    }
+
+    &.second {
+      right: 65px;
+      opacity: 0;
+    }
+  }
+
+  &:hover {
+    color: white;
+    transition: 0.4s;
+
+    .icon {
+      color: $main-color;
+
+      &.first {
+        left: 65px;
+        opacity: 0;
+      }
+
+      &.second {
+        right: 55px;
+        opacity: 1;
+
+      }
+
+    }
+  }
+}
+
+.btn-tag {
+  border: $border-transparent;
+  background: black;
+  text-transform: uppercase;
+  font-size: inherit;
+  color: inherit;
+  margin-bottom: 5px;
+  transition: 0.4s;
+
+  &:hover {
+    border: 1px solid $main-color;
+    color: white;
+  }
+}
 
 
 @include media-breakpoint-up(sm) {
