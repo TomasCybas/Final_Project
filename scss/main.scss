@@ -61,7 +61,6 @@ body {
     .nav-link {
       padding-left: 15px;
       padding-right: 15px;
-
     }
 
     li {
@@ -77,12 +76,40 @@ body {
 
       &:hover {
         transition: 1s;
-        background-color: $main-color;
-        color: white;
+        color: $main-color;
       }
     }
   }
 }
+
+
+.hover-dropdown {
+  .dropdown-menu {
+    background: black;
+    .dropdown-item {
+      color: $text-grey;
+      font-size: 14px;
+      &:hover {
+        color: white;
+        background: black;
+      }
+    }
+  }
+  .dropdown-toggle {
+    &:after {
+      display:none;
+    }
+  }
+  &.dropdown {
+    &:hover {
+      .dropdown-menu {
+        display: block;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
 
 .search-btn {
   border: none;
@@ -450,11 +477,11 @@ hr {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, -50%);
     }
 
-    &:hover{
-      opacity:1;
+    &:hover {
+      opacity: 1;
       transition: 0.6s;
     }
 
@@ -462,7 +489,7 @@ hr {
 }
 
 
-.flicker-img{
+.flicker-img {
   position: relative;
   width: 33.333%;
   float: left;
@@ -481,15 +508,16 @@ hr {
   color: white;
   opacity: 0;
   transition: 0.4s;
+
   i {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
   }
 
-  &:hover{
-    opacity:1;
+  &:hover {
+    opacity: 1;
     transition: 0.4s;
   }
 }
@@ -507,11 +535,13 @@ hr {
   right: 10px;
   bottom: 10px;
 }
+
 .author-link {
-  a{
+  a {
     color: inherit;
     text-decoration: none;
     text-transform: uppercase;
+
     &:hover {
       text-decoration: none;
       color: $main-color;
@@ -522,6 +552,7 @@ hr {
 .custom-modal-trigger {
   position: relative;
   display: block;
+
   .trigger-overlay {
     position: absolute;
     background: transparent;
@@ -532,19 +563,22 @@ hr {
     height: 100%;
     opacity: 1;
     transition: 0.6s;
+
     i {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, -50%);
       font-size: 50px;
       opacity: 1;
       transition: 1s;
     }
-    &:hover{
+
+    &:hover {
       opacity: 0.7;
       transition: 0.6s;
       background: $main-color;
+
       i {
         transform: translate(-50%, -50%) rotateZ(120deg);
         transition: 1s;
@@ -617,6 +651,41 @@ hr {
   &:hover {
     border: 1px solid $main-color;
     color: white;
+  }
+}
+
+.footer-bottom {
+  background: black;
+  border-top: 1px dotted $text-grey;
+
+  li {
+    margin: 0;
+    padding-right: 10px;
+
+    &:not(:first-child):before {
+      content: "/";
+      padding-right: 18px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.highlight {
+  color: $main-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    color: $main-color;
   }
 }
 

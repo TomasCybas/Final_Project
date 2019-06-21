@@ -1,5 +1,5 @@
 "use strict";
-
+//google maps function
 function myMap() {
     var mapProp = {
         center: new google.maps.LatLng(51.508742, -0.120850),
@@ -19,3 +19,4 @@ $(document).ready(function () {
             $('#custom_video').attr('src', url)
         });
 });
+
