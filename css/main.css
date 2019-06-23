@@ -112,7 +112,9 @@ body {
   height: 30px; }
   .progress .progress-bar {
     text-align: left;
-    padding-left: 10px; }
+    transition: width 3s; }
+    .progress .progress-bar span {
+      margin-left: 10px; }
 
 .bg-banner {
   background-image: url(../css/img/bg_header4.jpg);
@@ -478,6 +480,77 @@ hr {
   .highlight:hover {
     text-decoration: none;
     color: #1ccdca; }
+
+.plan-table {
+  border: 1px solid #e4e4e4;
+  width: 100%; }
+  .plan-table tbody tr td {
+    padding: 10px;
+    font-size: 14px;
+    color: #777777; }
+  .plan-table.table-bordered thead th {
+    border-bottom-width: 1px; }
+  .plan-table .plan-header {
+    height: 150px;
+    color: #1ccdca;
+    transition-duration: 0.6s;
+    transition-property: background-color, color;
+    transition-delay: 0.5s, 0s; }
+    .plan-table .plan-header:hover {
+      background-color: #1ccdca;
+      color: white;
+      transition-delay: 0s, 0.5s; }
+    .plan-table .plan-header .plan-name {
+      margin-top: 105px; }
+
+.hexagon-container {
+  position: absolute;
+  top: -58px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2; }
+
+.hexagon {
+  position: relative;
+  width: 100px;
+  height: 57.74px;
+  margin: 28.87px 0;
+  background-color: white;
+  border-left: solid 2px #1ccdca;
+  border-right: solid 2px #1ccdca; }
+  .hexagon .hexagon-content {
+    position: relative;
+    top: 5%;
+    color: #1ccdca;
+    z-index: 3; }
+    .hexagon .hexagon-content .price {
+      font-size: 25px;
+      margin-bottom: 0; }
+    .hexagon .hexagon-content .periodicity {
+      font-size: 14px; }
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 70.71px;
+  height: 70.71px;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+  background-color: inherit;
+  left: 12.6447px; }
+
+.hexagon:before {
+  top: -35.3553px;
+  border-top: solid 2.8284px #1ccdca;
+  border-right: solid 2.8284px #1ccdca; }
+
+.hexagon:after {
+  bottom: -35.3553px;
+  border-bottom: solid 2.8284px #1ccdca;
+  border-left: solid 2.8284px #1ccdca; }
 
 @media (min-width: 992px) {
   .carousel-control {

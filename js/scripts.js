@@ -1,4 +1,6 @@
 "use strict";
+
+
 //google maps function
 function myMap() {
     var mapProp = {
@@ -11,7 +13,6 @@ function myMap() {
 // function to stop video playback on modal close
 $(document).ready(function () {
     var url = $('#custom_video').attr('src');
-    console.log(url);
     $('#video_modal').on('hide.bs.modal', function () {
         $('#custom_video').attr('src', '')
     })
@@ -19,4 +20,45 @@ $(document).ready(function () {
             $('#custom_video').attr('src', url)
         });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//AJAX TESTING
+
+document.getElementById('jsonTest').addEventListener('click', function(e){
+    e.preventDefault();
+    ajax('../json/pricing_plans.json');
+    return false;
+});
+
+
+function ajax( url, callBack){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            callBack(JSON.parse(this.responseText));
+        }
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
+}
+
+function preparePricingPlans( data) {
+
+    
+}
+
 

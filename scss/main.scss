@@ -82,24 +82,27 @@ body {
   }
 }
 
-
 .hover-dropdown {
   .dropdown-menu {
     background: black;
+
     .dropdown-item {
       color: $text-grey;
       font-size: 14px;
+
       &:hover {
         color: white;
         background: black;
       }
     }
   }
+
   .dropdown-toggle {
     &:after {
-      display:none;
+      display: none;
     }
   }
+
   &.dropdown {
     &:hover {
       .dropdown-menu {
@@ -109,7 +112,6 @@ body {
     }
   }
 }
-
 
 .search-btn {
   border: none;
@@ -178,7 +180,10 @@ body {
 
   .progress-bar {
     text-align: left;
-    padding-left: 10px;
+    transition: width 3s;
+    span {
+      margin-left: 10px;
+    }
   }
 }
 
@@ -687,6 +692,96 @@ hr {
     text-decoration: none;
     color: $main-color;
   }
+}
+
+
+
+.plan-table {
+  tbody tr td {
+    padding: 10px;
+    font-size: 14px;
+    color: $text-grey;
+  }
+  &.table-bordered {
+    thead {
+      th {
+        border-bottom-width: 1px;
+      }
+    }
+  }
+  border: $border;
+  width: 100%;
+  .plan-header {
+    height: 150px;
+    color: $main-color;
+    transition-duration: 0.6s;
+    transition-property: background-color, color;
+    transition-delay: 0.5s, 0s;
+    &:hover{
+      background-color: $main-color;
+      color: white;
+      transition-delay: 0s, 0.5s;
+    }
+    .plan-name {
+      margin-top: 105px;
+    }
+  }
+}
+// hexagon for the pricing section
+.hexagon-container {
+  position: absolute;
+  top: -58px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.hexagon {
+  position: relative;
+  width: 100px;
+  height: 57.74px;
+  margin: 28.87px 0;
+  background-color: white;
+  border-left: solid 2px $main-color;
+  border-right: solid 2px $main-color;
+  .hexagon-content {
+    position: relative;
+    top: 5%;
+    color: $main-color;
+    z-index: 3;
+    .price {
+      font-size: 25px;
+      margin-bottom: 0;
+    }
+    .periodicity {
+      font-size: 14px;
+    }
+  }
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 70.71px;
+  height: 70.71px;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+  background-color: inherit;
+  left: 12.6447px;
+}
+
+.hexagon:before {
+  top: -35.3553px;
+  border-top: solid 2.8284px  $main-color;
+  border-right: solid 2.8284px  $main-color;
+}
+
+.hexagon:after {
+  bottom: -35.3553px;
+  border-bottom: solid 2.8284px  $main-color;
+  border-left: solid 2.8284px  $main-color;
 }
 
 
