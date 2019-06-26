@@ -37,10 +37,9 @@ $(document).ready(function () {
 
 
 //AJAX TESTING
-
 document.getElementById('jsonTest').addEventListener('click', function(e){
     e.preventDefault();
-    ajax('../json/pricing_plans.json');
+    ajax('../json/pricing_plans.json', preparePricingPlans);
     return false;
 });
 
@@ -56,9 +55,16 @@ function ajax( url, callBack){
     xhttp.send();
 }
 
-function preparePricingPlans( data) {
-
-    
+function preparePricingPlans(response) {
+    console.log(response);
+    console.log(response.plans[0]);
+    var html = '';
+    let i;
+    for(i=0; i < response.length; i++) {
+        html = response[i].name;
+        console.log(html)
+    }
 }
+
 
 

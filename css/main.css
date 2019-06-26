@@ -53,10 +53,21 @@ body {
       color: white;
       background: black; }
 
+.hover-dropdown .dropright-toggle {
+  position: relative; }
+  .hover-dropdown .dropright-toggle:after {
+    position: absolute;
+    content: '>>';
+    right: 24px; }
+
 .hover-dropdown .dropdown-toggle:after {
   display: none; }
 
-.hover-dropdown.dropdown:hover .dropdown-menu {
+.hover-dropdown.dropright:hover .dropdown-menu.submenu {
+  display: block;
+  margin-left: 0; }
+
+.hover-dropdown.dropdown:hover .dropdown-menu:not(.submenu) {
   display: block;
   margin-top: 0; }
 

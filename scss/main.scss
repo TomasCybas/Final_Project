@@ -96,19 +96,41 @@ body {
       }
     }
   }
+  .dropright-toggle{
+    position: relative;
+
+    &:after{
+      position: absolute;
+      content: '>>';
+      right: 24px;
+    }
+  }
 
   .dropdown-toggle {
     &:after {
       display: none;
     }
   }
+  &.dropright {
+    &:hover{
+      .dropdown-menu{
+        &.submenu{
+          display: block;
+          margin-left: 0;
+        }
+      }
+    }
+  }
 
   &.dropdown {
     &:hover {
-      .dropdown-menu {
-        display: block;
-        margin-top: 0;
+      .dropdown-menu{
+        &:not(.submenu) {
+          display: block;
+          margin-top: 0;
+        }
       }
+
     }
   }
 }
