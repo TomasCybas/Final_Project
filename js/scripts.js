@@ -26,7 +26,7 @@ $(function () {
 });
 
 
-    function ajax(url, callBack) {
+function ajax(url, callBack) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
@@ -36,6 +36,7 @@ $(function () {
     xhttp.open("GET", url, true);
     xhttp.send();
 }
+
 // GENERATES HTML FOR PRICING PLANS
 function preparePricingPlans(response) {
     var html = '';
@@ -82,7 +83,8 @@ function preparePricingPlans(response) {
                         indicator + j + '</td></tr>'
                 }
             }
-            html += '</tbody><tfoot><td><button class="btn btn-black">Placeholder</button></td></tfoot></table></div>'
+            html += '</tbody><tfoot><td class="py-3"><button class="btn btn-plan"><i class="fas fa-shopping-cart px-2">' +
+                '</i>Order now</button></td></tfoot></table></div>'
         }
     }
     document.getElementById('plans_section').innerHTML = html;
