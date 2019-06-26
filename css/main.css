@@ -161,6 +161,7 @@ body {
     color: #e74c3c; }
 
 .counter {
+  animation-duration: 1s;
   text-align: center; }
   .counter i {
     color: #1ccdca;

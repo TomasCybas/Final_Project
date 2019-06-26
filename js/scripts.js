@@ -23,6 +23,7 @@ $(document).ready(function () {
 $(function () {
     ajax('../json/pricing_plans.json', preparePricingPlans); //generates pricing section
     handleScrollEvents();
+
 });
 
 // handles running numbers animation using countUp.js
@@ -49,9 +50,12 @@ var scrollEvents = {
 
 function handleScrollEvents() { //handles running numbers and progress bar behaviour on scroll & load;
     // checks if running numbers is scrolled to on load
+    var counterElms = document.getElementsByClassName('counter');
+    console.log(counterElms);
     var elm = $(window);
     var scrolledHeight = elm.scrollTop();
     if (scrolledHeight + elm.outerHeight() >= $('#running_numbers').position().top && !scrollEvents.runningNumbers) {
+        animateSlideDown();
         startRunningNumbers();
         scrollEvents.runningNumbers = true;
     }
@@ -60,6 +64,7 @@ function handleScrollEvents() { //handles running numbers and progress bar behav
         var elm = $(window);
         var scrolledHeight = elm.scrollTop();
         if (scrolledHeight + elm.outerHeight() >= $('#running_numbers').position().top && !scrollEvents.runningNumbers) {
+            animateSlideDown();
             startRunningNumbers();
             scrollEvents.runningNumbers = true;
         }
@@ -72,7 +77,15 @@ function handleScrollEvents() { //handles running numbers and progress bar behav
         projectsCounter.start();
         awardsCounter.start();
     }
-    //TODO: add animations for div coming down from topassadasd
+
+    function animateSlideDown() {
+        let i;
+        for (i = 0; i < counterElms.length; i++) {
+            let animationDelay = [i] / 5 + 's';
+            counterElms[i].classList.add('animated', 'slideInDown');
+            counterElms[i].style.animationDelay = animationDelay;
+        }
+    }
 }
 
 

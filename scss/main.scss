@@ -13,8 +13,8 @@ $border-transparent: 1px solid transparent;
 body {
   font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
-
 }
+
 
 .top-bar {
   background-color: #f9f9f9;
@@ -257,6 +257,7 @@ body {
 }
 
 .counter {
+  animation-duration: 1s;
   text-align: center;
 
   i {
