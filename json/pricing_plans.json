@@ -6,12 +6,12 @@
     "periodicity" : "monthly",
     "active": false,
     "benefits" : {
-      "free_setup" : true,
-      "50_websites" : false,
-      "55GB_storage" : false,
-      "50GB_bandwith" : true,
-      "9_months_support" : false,
-      "unlimited_subdomains" : true
+      "free setup" : true,
+      "50 websites" : false,
+      "55GB storage" : false,
+      "50GB bandwith" : true,
+      "9 months support" : false,
+      "unlimited subdomains" : true
     }
   },
   {

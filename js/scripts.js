@@ -1,7 +1,7 @@
 "use strict";
 
 
-//google maps function
+//GOOGLE MAPS
 function myMap() {
     var mapProp = {
         center: new google.maps.LatLng(51.508742, -0.120850),
@@ -10,7 +10,7 @@ function myMap() {
     var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 }
 
-// function to stop video playback on modal close
+// FUNCTION TO STOP VIDEO PLAYBACK ON MODAL CLOSE
 $(document).ready(function () {
     var url = $('#custom_video').attr('src');
     $('#video_modal').on('hide.bs.modal', function () {
@@ -21,32 +21,14 @@ $(document).ready(function () {
         });
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//AJAX TESTING
-document.getElementById('jsonTest').addEventListener('click', function(e){
-    e.preventDefault();
-    ajax('../json/pricing_plans.json', preparePricingPlans);
-    return false;
+$(function () {
+    ajax('../json/pricing_plans.json', preparePricingPlans); //generates pricing section
 });
 
 
-function ajax( url, callBack){
+    function ajax(url, callBack) {
     var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             callBack(JSON.parse(this.responseText));
         }
@@ -54,17 +36,59 @@ function ajax( url, callBack){
     xhttp.open("GET", url, true);
     xhttp.send();
 }
-
+// GENERATES HTML FOR PRICING PLANS
 function preparePricingPlans(response) {
-    console.log(response);
-    console.log(response.plans[0]);
     var html = '';
-    let i;
-    for(i=0; i < response.length; i++) {
-        html = response[i].name;
-        console.log(html)
+    var plans = response.plans;
+
+    for (let i in plans) {
+        if (plans.hasOwnProperty(i)) {
+            let active = '';
+            if (plans[i].active) {
+                active = 'active';
+            }
+            html +=
+                '<div class="col-md-4">' +
+                '<table class="plan-table text-center table-bordered rounded">' +
+                '<thead>' +
+                '<tr>' +
+                '<th class="plan-header text-center position-relative ' + active + '">' +
+                '<div class="hexagon-container">' +
+                '<div class="hexagon mx-auto">' +
+                '<div class="hexagon-content">' +
+                '<h6 class="text-center price">' +
+                plans[i].price +
+                '</h6>' +
+                '<p class="periodicity text-center text-uppercase">' +
+                plans[i].periodicity +
+                '</p>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<p class="plan-name text-uppercase">' +
+                plans[i].name +
+                '</p>' +
+                '</th>' +
+                '</tr>' +
+                '</thead>' + //end of table header
+                '<tbody>';
+            for (let j in plans[i].benefits) {
+                if (plans[i].benefits.hasOwnProperty(j)) {
+                    let indicator = '<i class="fas fa-times px-2 text-danger"></i>';
+                    if (plans[i].benefits[j]) {
+                        indicator = '<i class="fas fa-check px-2 text-success"></i>';
+                    }
+                    html += '<tr><td class="text-capitalize">' +
+                        indicator + j + '</td></tr>'
+                }
+            }
+            html += '</tbody><tfoot><td><button class="btn btn-black">Placeholder</button></td></tfoot></table></div>'
+        }
     }
+    document.getElementById('plans_section').innerHTML = html;
 }
+
+
 
 
 

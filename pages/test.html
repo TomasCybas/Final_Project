@@ -16,15 +16,7 @@
 <body>
 
 
-
-
-<div class="title col-6">
-    <h2>Title xujaitle</h2>
-    <div class="line"></div>
-    <div class="underline"></div>
-    <div class="circle"></div>
-</div>
-
+<!--
 <div class="progress">
     <div class="progress-bar bg-info" role="progressbar" aria-valuenow="60"
          aria-valuemin="0" aria-valuemax="100">
@@ -38,9 +30,148 @@
                 return $(this).attr("aria-valuenow") + "%";
             })
         })
-    </script>
+    </script>-->
 
+<section class="container-fluid">
+    <button id="ajax">AJAX</button>
+    <div id="plans_section" class="container row">
+        <!--FILLED BY JS-->
+
+    </div>
+    <!--PRICING PLANS SECTION-->
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(function () {
+        ajax('../json/pricing_plans.json', preparePricingPlans);
+    });
+
+
+    function ajax(url, callBack) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                callBack(JSON.parse(this.responseText));
+            }
+        };
+        xhttp.open("GET", url, true);
+        xhttp.send();
+    }
+
+    function preparePricingPlans(response) {
+        var html = '';
+        var plans = response.plans;
+
+        for (let i in plans) {
+            if (plans.hasOwnProperty(i)) {
+                let active = '';
+                if (plans[i].active) {
+                    active = 'active';
+                }
+                html +=
+                    '<div class="col-md-4">' +
+                    '<table class="plan-table text-center table-bordered rounded">' +
+                    '<thead>' +
+                    '<tr>' +
+                    '<th class="plan-header text-center position-relative ' + active + '">' +
+                    '<div class="hexagon-container">' +
+                    '<div class="hexagon mx-auto">' +
+                    '<div class="hexagon-content">' +
+                    '<h6 class="text-center price">' +
+                    plans[i].price +
+                    '</h6>' +
+                    '<p class="periodicity text-center text-uppercase">' +
+                    plans[i].periodicity +
+                    '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<p class="plan-name text-uppercase">' +
+                    plans[i].name +
+                    '</p>' +
+                    '</th>' +
+                    '</tr>' +
+                    '</thead>' + //end of table header
+                    '<tbody>';
+                for (let j in plans[i].benefits) {
+                    if (plans[i].benefits.hasOwnProperty(j)) {
+                        let indicator = '<i class="fas fa-times px-2 text-danger"></i>';
+                        if (plans[i].benefits[j]) {
+                            indicator = '<i class="fas fa-check px-2 text-success"></i>';
+                        }
+                        html += '<tr><td class="text-capitalize">' +
+                            indicator + j + '</td></tr>'
+                    }
+                }
+                html += '</tbody><tfoot><td><button class="btn btn-black">Placeholder</button></td></tfoot></table></div>'
+            }
+        }
+        document.getElementById('plans_section').innerHTML = html;
+    }
+</script>
+<!--<i class="fas fa-times"></i>
+<i class="fas fa-check"></i>-->
+<!--<div class="row">
+    <div class="col-md-4">
+        <table id="plan_starter" class="plan-table text-center table-bordered rounded">
+            <thead>
+            <tr>
+                <th class="plan-header text-center position-relative">
+                    <div class="hexagon-container">
+                        <div class="hexagon mx-auto">
+                            <div class="hexagon-content">
+                                <h6 class="text-center price">
+                                    573
+                                </h6>
+                                <p class="periodicity text-center text-uppercase">
+                                    Monthly
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="plan-name">
+                        STARTER
+                    </p>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Placeholder</td>
+            </tr>
+            <tr>
+                <td>Placeholder</td>
+            </tr>
+            <tr>
+                <td>Placeholder</td>
+            </tr>
+            <tr>
+                <td>Placeholder</td>
+            </tr>
+            <tr>
+                <td>Placeholder</td>
+            </tr>
+            <tr>
+                <td>Placeholder</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td>
+                    <button id="jsonTest" class="btn btn-black">Placeholder</button>
+                </td>
+            </tr>
+            </tfoot>
+
+        </table>
+    </div>
+
+</div>-->
+
+<!--
 <script src="../js/scripts.js"></script>
+-->
 <script src="https://kit.fontawesome.com/4cb086a6a0.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
