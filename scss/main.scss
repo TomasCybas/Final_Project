@@ -172,7 +172,6 @@ body {
   transition: background-color;
 }
 
-//TODO: rework banner classes (now using duplicate style)
 .banner-top {
   h6 {
     font-weight: bold;
@@ -380,7 +379,7 @@ body {
   border-radius: 50%;
 }
 
-.btn-black { /*TODO: works the other way arround, figure out how to fix*/
+.btn-black { /*TODO: works the other way around, figure out how to fix*/
   i {
     transition: 0.1s ease-out 0.1s;
 

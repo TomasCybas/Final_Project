@@ -1,6 +1,5 @@
 "use strict";
 
-
 //GOOGLE MAPS
 function myMap() {
     var mapProp = {
@@ -23,7 +22,58 @@ $(document).ready(function () {
 
 $(function () {
     ajax('../json/pricing_plans.json', preparePricingPlans); //generates pricing section
+    handleScrollEvents();
 });
+
+// handles running numbers animation using countUp.js
+var clientsNumber = parseFloat(document.getElementById('clients_counter').innerText);
+var awardsNumber = parseFloat(document.getElementById('awards_counter').innerText);
+var linesNumber = parseFloat(document.getElementById('lines_counter').innerText);
+var projectsNumber = parseFloat(document.getElementById('projects_counter').innerText);
+var counterTransitionTime = 2;
+var options = {
+    useGrouping: false,
+    useEasing: true
+};
+var clientsCounter = new CountUp('clients_counter', 0, clientsNumber, 0, counterTransitionTime, options);
+var awardsCounter = new CountUp('awards_counter', 0, awardsNumber, 0, counterTransitionTime, options);
+var linesCounter = new CountUp('lines_counter', 0, linesNumber, 0, counterTransitionTime, options);
+var projectsCounter = new CountUp('projects_counter', 0, projectsNumber, 0, counterTransitionTime, options);
+
+
+var scrollEvents = {
+    runningNumbers: false,
+    progressbars: false
+};
+
+
+function handleScrollEvents() { //handles running numbers and progress bar behaviour on scroll & load;
+    // checks if running numbers is scrolled to on load
+    var elm = $(window);
+    var scrolledHeight = elm.scrollTop();
+    if (scrolledHeight + elm.outerHeight() >= $('#running_numbers').position().top && !scrollEvents.runningNumbers) {
+        startRunningNumbers();
+        scrollEvents.runningNumbers = true;
+    }
+    // checks if running numbers is scrolled to on scroll
+    $(window).on('scroll', function (e) {
+        var elm = $(window);
+        var scrolledHeight = elm.scrollTop();
+        if (scrolledHeight + elm.outerHeight() >= $('#running_numbers').position().top && !scrollEvents.runningNumbers) {
+            startRunningNumbers();
+            scrollEvents.runningNumbers = true;
+        }
+    });
+
+    //starts running numbers animations
+    function startRunningNumbers() {
+        linesCounter.start();
+        clientsCounter.start();
+        projectsCounter.start();
+        awardsCounter.start();
+    }
+    //TODO: add animations for div coming down from topassadasd
+}
 
 
 function ajax(url, callBack) {
@@ -83,6 +133,7 @@ function preparePricingPlans(response) {
     }
     document.getElementById('plans_section').innerHTML = html;
 }
+
 
 
 

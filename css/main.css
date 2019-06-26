@@ -243,7 +243,7 @@ body {
   border-radius: 50%; }
 
 .btn-black {
-  /*TODO: works the other way arround, figure out how to fix*/
+  /*TODO: works the other way around, figure out how to fix*/
   background-color: black;
   color: white;
   transition: 0.4s ease-out 0.4s;
