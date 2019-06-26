@@ -57,18 +57,12 @@ function preparePricingPlans(response) {
                 '<div class="hexagon-container">' +
                 '<div class="hexagon mx-auto">' +
                 '<div class="hexagon-content">' +
-                '<h6 class="text-center price">' +
-                plans[i].price +
-                '</h6>' +
-                '<p class="periodicity text-center text-uppercase">' +
-                plans[i].periodicity +
-                '</p>' +
+                '<h6 class="text-center price">' + plans[i].price + '</h6>' +
+                '<p class="periodicity text-center text-uppercase">' + plans[i].periodicity + '</p>' +
                 '</div>' +
                 '</div>' +
                 '</div>' +
-                '<p class="plan-name text-uppercase">' +
-                plans[i].name +
-                '</p>' +
+                '<p class="plan-name text-uppercase">' + plans[i].name + '</p>' +
                 '</th>' +
                 '</tr>' +
                 '</thead>' + //end of table header

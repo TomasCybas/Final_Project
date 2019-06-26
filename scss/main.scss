@@ -99,11 +99,11 @@ body {
   .dropright-toggle{
     position: relative;
 
-    &:after{
+ /*  !* &:after{
       position: absolute;
       content: '>>';
-      right: 24px;
-    }
+      right: 24px;*!
+    }*/
   }
 
   .dropdown-toggle {
