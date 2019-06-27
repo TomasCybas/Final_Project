@@ -160,6 +160,18 @@ body {
   .tab-content ul li i {
     color: #e74c3c; }
 
+@keyframes slide-down-animation {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0); }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); } }
+
+.slide-down-animation {
+  animation-name: slide-down-animation;
+  animation-fill-mode: both; }
+
 .counter {
   animation-duration: 1s;
   text-align: center; }

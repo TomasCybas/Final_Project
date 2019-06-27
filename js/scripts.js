@@ -82,7 +82,7 @@ function handleScrollEvents() { //handles running numbers and progress bar behav
         let i;
         for (i = 0; i < counterElms.length; i++) {
             let animationDelay = [i] / 5 + 's';
-            counterElms[i].classList.add('animated', 'slideInDown');
+            counterElms[i].classList.add('slide-down-animation');
             counterElms[i].style.animationDelay = animationDelay;
         }
     }
