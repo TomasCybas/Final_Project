@@ -341,7 +341,7 @@ body {
   border-top: 1px solid white;
 }
 
-.section-title {
+.subsection-title {
   position: relative;
   padding-bottom: 10px;
   margin-bottom: 20px;
@@ -353,7 +353,7 @@ body {
     border: 1px solid $main-color;
     position: absolute;
     bottom: -5px;
-    z-index: 1;
+    z-index: 2;
   }
 
   .underline {
@@ -362,10 +362,9 @@ body {
     width: 33%;
     position: absolute;
     bottom: 0;
-    z-index: -99999;
+    z-index: 0;
     left: 11px;
   }
-
   .line {
     background-color: $main-color;
     height: 1px;
@@ -374,6 +373,53 @@ body {
     bottom: 0;
     transition: 1s;
     left: 11px;
+    z-index: 1;
+  }
+
+  &:hover {
+    .line {
+      background-color: $main-color;
+      width: 25%;
+      transition: 1s;
+    }
+  }
+}
+
+.section-title {
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+
+  .icon {
+    position: absolute;
+    padding: 0 5px;
+    bottom: 40px;
+    z-index: 2;
+    left: 50%;
+    color: $main-color;
+    transform: translateX(-50%);
+  }
+
+  .underline {
+    background-color: #e4e4e4;
+    height: 1px;
+    width: 33%;
+    position: absolute;
+    bottom: 50px;
+    z-index: 0;
+    left: 50%;
+    transform: translateX(-50%)
+  }
+  .line {
+    background-color: #1ccdca;
+    height: 1px;
+    width: 15%;
+    position: absolute;
+    bottom: 50px;
+    transition: 1s;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
   }
 
   &:hover {

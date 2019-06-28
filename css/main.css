@@ -234,34 +234,71 @@ body {
 #googleMap {
   border-top: 1px solid white; }
 
-.section-title {
+.subsection-title {
   position: relative;
   padding-bottom: 10px;
   margin-bottom: 20px; }
-  .section-title .circle {
+  .subsection-title .circle {
     height: 11px;
     width: 11px;
     border-radius: 50%;
     border: 1px solid #1ccdca;
     position: absolute;
     bottom: -5px;
-    z-index: 1; }
-  .section-title .underline {
+    z-index: 2; }
+  .subsection-title .underline {
     background-color: rgba(0, 0, 0, 0.2);
     height: 1px;
     width: 33%;
     position: absolute;
     bottom: 0;
-    z-index: -99999;
+    z-index: 0;
     left: 11px; }
-  .section-title .line {
+  .subsection-title .line {
     background-color: #1ccdca;
     height: 1px;
     width: 15%;
     position: absolute;
     bottom: 0;
     transition: 1s;
-    left: 11px; }
+    left: 11px;
+    z-index: 1; }
+  .subsection-title:hover .line {
+    background-color: #1ccdca;
+    width: 25%;
+    transition: 1s; }
+
+.section-title {
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 20px; }
+  .section-title .icon {
+    position: absolute;
+    padding: 0 5px;
+    bottom: 40px;
+    z-index: 2;
+    left: 50%;
+    color: #1ccdca;
+    transform: translateX(-50%); }
+  .section-title .underline {
+    background-color: #e4e4e4;
+    height: 1px;
+    width: 33%;
+    position: absolute;
+    bottom: 50px;
+    z-index: 0;
+    left: 50%;
+    transform: translateX(-50%); }
+  .section-title .line {
+    background-color: #1ccdca;
+    height: 1px;
+    width: 15%;
+    position: absolute;
+    bottom: 50px;
+    transition: 1s;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; }
   .section-title:hover .line {
     background-color: #1ccdca;
     width: 25%;
