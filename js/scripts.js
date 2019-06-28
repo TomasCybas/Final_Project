@@ -1,6 +1,5 @@
 "use strict";
 
-//GOOGLE MAPS
 function myMap() {
     var mapProp = {
         center: new google.maps.LatLng(51.508742, -0.120850),
@@ -21,70 +20,99 @@ $(document).ready(function () {
 });
 
 $(function () {
-    ajax('../json/pricing_plans.json', preparePricingPlans); //generates pricing section
+    ajax('../json/pricing_plans.json', preparePricingPlans);
     handleScrollEvents();
-
 });
 
-// handles running numbers animation using countUp.js
-var clientsNumber = parseFloat(document.getElementById('clients_counter').innerText);
-var awardsNumber = parseFloat(document.getElementById('awards_counter').innerText);
-var linesNumber = parseFloat(document.getElementById('lines_counter').innerText);
-var projectsNumber = parseFloat(document.getElementById('projects_counter').innerText);
-var counterTransitionTime = 2;
-var options = {
-    useGrouping: false,
-    useEasing: true
-};
-var clientsCounter = new CountUp('clients_counter', 0, clientsNumber, 0, counterTransitionTime, options);
-var awardsCounter = new CountUp('awards_counter', 0, awardsNumber, 0, counterTransitionTime, options);
-var linesCounter = new CountUp('lines_counter', 0, linesNumber, 0, counterTransitionTime, options);
-var projectsCounter = new CountUp('projects_counter', 0, projectsNumber, 0, counterTransitionTime, options);
 
-
-var scrollEvents = {
-    runningNumbers: false,
-    progressbars: false
-};
-
-
-function handleScrollEvents() { //handles running numbers and progress bar behaviour on scroll & load;
-    // checks if running numbers is scrolled to on load
-    var counterElms = document.getElementsByClassName('counter');
-    console.log(counterElms);
+function handleScrollEvents() { // handles running numbers and progress bars on load & scroll
+    var scrollEvents = {
+        runningNumbers: false,
+        progressBars: false
+    };
     var elm = $(window);
     var scrolledHeight = elm.scrollTop();
+    if (scrolledHeight + elm.outerHeight() >= $('#progress_bars').position().top && !scrollEvents.progressBars) {
+        runProgressBars();
+        scrollEvents.progressBars = true;
+    }
     if (scrolledHeight + elm.outerHeight() >= $('#running_numbers').position().top && !scrollEvents.runningNumbers) {
         animateSlideDown();
-        startRunningNumbers();
+        runCounters();
         scrollEvents.runningNumbers = true;
     }
-    // checks if running numbers is scrolled to on scroll
     $(window).on('scroll', function (e) {
         var elm = $(window);
         var scrolledHeight = elm.scrollTop();
+        if (scrolledHeight + elm.outerHeight() >= $('#progress_bars').position().top && !scrollEvents.progressBars) {
+            runProgressBars();
+            scrollEvents.progressBars = true;
+        }
         if (scrolledHeight + elm.outerHeight() >= $('#running_numbers').position().top && !scrollEvents.runningNumbers) {
             animateSlideDown();
-            startRunningNumbers();
+            runCounters();
             scrollEvents.runningNumbers = true;
         }
     });
+}
 
-    //starts running numbers animations
-    function startRunningNumbers() {
-        linesCounter.start();
-        clientsCounter.start();
-        projectsCounter.start();
-        awardsCounter.start();
+function runProgressBars() { //handles animation for progress bars
+    var bars = document.getElementsByClassName('progress-bar');
+    for (let i = 0; i < bars.length; i++) {
+        var elm = bars[i];
+        animateBar(elm);
+        animateText(elm)
+
     }
 
-    function animateSlideDown() {
-        let i;
-        for (i = 0; i < counterElms.length; i++) {
-            let animationDelay = [i] / 5 + 's';
-            counterElms[i].classList.add('slide-down-animation');
-            counterElms[i].style.animationDelay = animationDelay;
-        }
+    function stop(interval) {
+        clearInterval(interval)
+    }
+
+    function animateBar(elm) {
+        var innerBubbleElm = elm.getElementsByClassName('inner-bubble')[0];
+        var percentage = parseFloat(elm.getAttribute('aria-valuenow')) + '%';
+        var counter = 0;
+        var interval = setInterval(function () {
+            elm.style.width = percentage;
+            innerBubbleElm.innerText = counter + '%';
+
+            if (counter === parseInt(percentage)) {
+                stop(interval);
+                animateText(elm);
+            }
+            counter++;
+        }, 30);
+    }
+
+    function animateText(elm) {
+        var barTitleElm = elm.getElementsByClassName('progress-bar-title')[0];
+        barTitleElm.style.left = 0;
+
+    }
+}
+
+
+function runCounters() { //handles counters with countUp.js
+    var options = {
+        useGrouping: false,
+        useEasing: true
+    };
+    var counters = $('.number');
+
+    counters.each(function (index) {
+        var value = $(counters[index]).html();
+        var counterAnimation = new CountUp(counters[index], 0, value, 0, 2, options);
+        counterAnimation.start();
+    });
+}
+
+function animateSlideDown() {
+    var counterElms = document.getElementsByClassName('counter');
+    for (let i = 0; i < counterElms.length; i++) {
+        let animationDelay = [i] / 5 + 's';
+        counterElms[i].classList.add('slide-down-animation');
+        counterElms[i].style.animationDelay = animationDelay;
     }
 }
 

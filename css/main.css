@@ -119,14 +119,58 @@ body {
   color: #1ccdca;
   font-size: 25px; }
 
+#web_bar {
+  background-color: #0bacb8; }
+
+#programming_bar {
+  background-color: #3a94b2; }
+
+#css_bar {
+  background-color: #1ccdca; }
+
+#wp_bar {
+  background-color: #00c194; }
+
+#joomla_bar {
+  background-color: #e74c3c; }
+
 .progress {
   background-color: #26292d;
-  height: 30px; }
+  height: 40px; }
   .progress .progress-bar {
     text-align: left;
-    transition: width 3s; }
-    .progress .progress-bar span {
-      margin-left: 10px; }
+    transition: 3s;
+    width: 0;
+    position: relative; }
+    .progress .progress-bar .progress-bar-title {
+      position: absolute;
+      left: -9999px;
+      padding: 0 10px;
+      transition: 3s; }
+
+.bubble {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  color: black;
+  font-style: italic; }
+  .bubble .inner-bubble {
+    background: white;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    border-radius: 5px; }
+  .bubble .bubble-triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 10px 5px 0;
+    border-color: transparent white transparent transparent;
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    transform: translateY(-50%); }
 
 .bg-banner {
   background-image: url(../css/img/bg_header4.jpg);
@@ -170,6 +214,10 @@ body {
 
 .slide-down-animation {
   animation-name: slide-down-animation;
+  animation-fill-mode: both; }
+
+.slide-in-left-animation {
+  animation-name: slide-in-left-animation;
   animation-fill-mode: both; }
 
 .counter {

@@ -273,7 +273,7 @@
     </div>
 </section>
 <section class="container-fluid bg-banner">
-    <div class="row">
+    <div id="progress_bars" class="row">
         <div class="col-12 col-md-6 bg-dark pr-0 ml-0">
             <div class=" px-4 py-5 banner-top">
                 <h5 class="text-uppercase text-white">
@@ -284,38 +284,58 @@
                     industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
                 </p>
                 <div class="progress">
-                    <div id="bar1" class="progress-bar bg-success" role="progressbar" style="width: 0%"
+                    <div id="web_bar" class="progress-bar rounded" role="progressbar"
                          aria-valuenow="80"
                          aria-valuemin="0" aria-valuemax="100">
-                        <span>WEB DESIGN</span>
+                        <span class="progress-bar-title">WEB DESIGN</span>
+                        <div class="bubble">
+                            <div class="inner-bubble"></div>
+                            <div class="bubble-triangle"></div>
+                        </div>
                     </div>
                 </div>
                 <br>
                 <div class="progress">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 60%" aria-valuenow="60"
+                    <div id="programming_bar" class="progress-bar rounded" role="progressbar" aria-valuenow="60"
                          aria-valuemin="0" aria-valuemax="100">
-                        <span>PROGRAMMING</span>
+                        <span class="progress-bar-title">PROGRAMMING</span>
+                        <div class="bubble">
+                            <div class="inner-bubble"></div>
+                            <div class="bubble-triangle"></div>
+                        </div>
                     </div>
                 </div>
                 <br>
                 <div class="progress">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70"
+                    <div id="css_bar" class="progress-bar rounded" role="progressbar"  aria-valuenow="70"
                          aria-valuemin="0" aria-valuemax="100">
-                        <span>HTML/CSS</span>
+                        <span class="progress-bar-title">HTML/CSS</span>
+                        <div class="bubble">
+                            <div class="inner-bubble"></div>
+                            <div class="bubble-triangle"></div>
+                        </div>
                     </div>
                 </div>
                 <br>
                 <div class="progress">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100"
+                    <div id="wp_bar" class="progress-bar rounded" role="progressbar"  aria-valuenow="100"
                          aria-valuemin="0" aria-valuemax="100">
-                        <span>WORDPRESS</span>
+                        <span class="progress-bar-title">WORDPRESS</span>
+                        <div class="bubble">
+                            <div class="inner-bubble"></div>
+                            <div class="bubble-triangle"></div>
+                        </div>
                     </div>
                 </div>
                 <br>
                 <div class="progress">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 40%" aria-valuenow="40"
+                    <div id="joomla_bar" class="progress-bar rounded" role="progressbar"  aria-valuenow="40"
                          aria-valuemin="0" aria-valuemax="100">
-                        <span>JOOMLA</span>
+                        <span class="progress-bar-title">JOOMLA</span>
+                            <div class="bubble">
+                            <div class="inner-bubble"></div>
+                            <div class="bubble-triangle"></div>
+                        </div>
                     </div>
                 </div>
                 <br>
@@ -582,22 +602,22 @@
     <div id="running_numbers" class="row py-5">
         <div class="col-md-3 counter">
             <i class="far fa-user"></i>
-            <p id="clients_counter" class="number">1500</p>
+            <p class="number">1500</p>
             <p class="title">Clients</p>
         </div>
         <div class="col-md-3 counter">
             <i class="far fa-heart"></i>
-            <p id="awards_counter" class="number">13</p>
+            <p class="number">13</p>
             <p class="title">Awards</p>
         </div>
         <div class="col-md-3 counter">
             <i class="fas fa-code"></i>
-            <p id="lines_counter" class="number">94771</p>
+            <p class="number">94771</p>
             <p class="title">Lines of code</p>
         </div>
         <div class="col-md-3 counter">
             <i class="far fa-paper-plane"></i>
-            <p id="projects_counter" class="number">384</p>
+            <p class="number">384</p>
             <p class="title">Projects</p>
         </div>
     </div>
@@ -1053,9 +1073,9 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=&callback=myMap"></script>  <!-- TODO: Enter API KEY-->
 <script src="../js/countUp.js"></script>
 <script src="../js/scripts.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=&callback=myMap"></script>  <!-- TODO: Enter API KEY-->
 
 </body>
 </html>
