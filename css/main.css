@@ -54,12 +54,7 @@ body {
       background: black; }
 
 .hover-dropdown .dropright-toggle {
-  position: relative;
-  /*  !* &:after{
-      position: absolute;
-      content: '>>';
-      right: 24px;*!
-    }*/ }
+  position: relative; }
 
 .hover-dropdown .dropdown-toggle:after {
   display: none; }

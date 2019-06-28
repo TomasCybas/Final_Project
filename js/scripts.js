@@ -41,7 +41,7 @@ function handleScrollEvents() { // handles running numbers and progress bars on 
         runCounters();
         scrollEvents.runningNumbers = true;
     }
-    $(window).on('scroll', function (e) {
+    $(window).on('scroll', function () {
         var elm = $(window);
         var scrolledHeight = elm.scrollTop();
         if (scrolledHeight + elm.outerHeight() >= $('#progress_bars').position().top && !scrollEvents.progressBars) {
@@ -55,6 +55,30 @@ function handleScrollEvents() { // handles running numbers and progress bars on 
         }
     });
 }
+
+function runCounters() { //handles counters with countUp.js
+    var options = {
+        useGrouping: false,
+        useEasing: true
+    };
+    var counters = $('.number');
+
+    counters.each(function (index) {
+        var value = $(counters[index]).html();
+        var counterAnimation = new CountUp(counters[index], 0, value, 0, 2, options);
+        counterAnimation.start();
+    });
+}
+
+function animateSlideDown() {
+    var counterElms = document.getElementsByClassName('counter');
+    for (let i = 0; i < counterElms.length; i++) {
+        let animationDelay = [i] / 5 + 's';
+        counterElms[i].classList.add('slide-down-animation');
+        counterElms[i].style.animationDelay = animationDelay;
+    }
+}
+
 
 function runProgressBars() { //handles animation for progress bars
     var bars = document.getElementsByClassName('progress-bar');
@@ -92,29 +116,6 @@ function runProgressBars() { //handles animation for progress bars
     }
 }
 
-
-function runCounters() { //handles counters with countUp.js
-    var options = {
-        useGrouping: false,
-        useEasing: true
-    };
-    var counters = $('.number');
-
-    counters.each(function (index) {
-        var value = $(counters[index]).html();
-        var counterAnimation = new CountUp(counters[index], 0, value, 0, 2, options);
-        counterAnimation.start();
-    });
-}
-
-function animateSlideDown() {
-    var counterElms = document.getElementsByClassName('counter');
-    for (let i = 0; i < counterElms.length; i++) {
-        let animationDelay = [i] / 5 + 's';
-        counterElms[i].classList.add('slide-down-animation');
-        counterElms[i].style.animationDelay = animationDelay;
-    }
-}
 
 
 function ajax(url, callBack) {
