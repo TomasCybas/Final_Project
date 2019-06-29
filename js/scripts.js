@@ -141,7 +141,7 @@ function preparePricingPlans(response) {
                 active = 'active';
             }
             html +=
-                '<div class="col-md-4">' +
+                '<div class="col-md-4 py-5 py-md-0">' +
                 '<table class="plan-table text-center table-bordered rounded">' +
                 '<thead>' +
                 '<tr>' +

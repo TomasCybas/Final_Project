@@ -15,7 +15,9 @@ body {
   box-sizing: border-box;
 }
 
-
+.bg-main {
+  background: $main-color;
+}
 .top-bar {
   background-color: #f9f9f9;
   border-bottom: $border;
@@ -26,9 +28,10 @@ body {
 }
 
 .top-bar-nav {
+  color: $text-grey;
   a {
     text-decoration: none;
-    color: $text-grey;
+    color: inherit;
   }
 
   li {
@@ -59,8 +62,7 @@ body {
 
   .navbar-nav {
     .nav-link {
-      padding-left: 15px;
-      padding-right: 15px;
+      padding: 25px 15px;
     }
 
     li {
@@ -85,6 +87,32 @@ body {
 .hover-dropdown {
   .dropdown-menu {
     background: black;
+    ul{
+      list-style: none;
+      padding:0;
+    }
+    &.language-menu {
+      background-color: $main-color;
+      z-index: 1050;
+      padding: 0;
+      .dropdown-item {
+        font-style: italic;
+        color: white;
+        transition: 1s;
+        padding:10px 0;
+        font-size: 11px;
+        &.active{
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+        a{
+          padding-left: 10px;
+        }
+        &:hover{
+          background-color: rgba(0, 0, 0, 0.1);
+          transition: 1s;
+        }
+      }
+    }
 
     .dropdown-item {
       color: $text-grey;
@@ -156,6 +184,73 @@ body {
   color: $main-color;
   width: 38px;
   height: 38px;
+  &:focus {
+    outline: none;
+  }
+}
+.cart-menu {
+  ul {
+    list-style-type: none;
+    padding-left: 10px;
+  }
+  font-size: 13px;
+  position: absolute;
+  left: -250px;
+  margin-top: 16px;
+  width: 300px;
+  .cart-menu-header {
+    font-size: 14px;
+  }
+  .dropdown-item {
+    padding: 5px 10px;
+    &:hover {
+      background-color:inherit;
+      .item-name {
+        color: $main-color;
+        transition: 0.6s
+    }
+    }
+    .item-count {
+      color: $text-grey;
+      float: right;
+    }
+  }
+  .cart-thumbnail{
+    border: 1px solid #dee2e6;
+    padding: .25rem;
+  }
+  .item-name {
+    transition: 0.6s;
+  }
+  .item-price {
+    color: $text-grey;
+  }
+  .remove-item {
+    position: absolute;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    left: -20px;
+    bottom: 50%;
+    color: $text-grey;
+    border: 1px solid $text-grey;
+    transition: 0.6s;
+    background-color: white;
+    i{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%)
+
+    }
+    &:hover {
+      border-color: $main-color;
+      color: $main-color;
+      transform: rotateZ(90deg);
+      transition: 0.6s;
+    }
+
+  }
 }
 
 .carousel-indicators li {
@@ -165,6 +260,21 @@ body {
   border-radius: 50%;
   transition: background-color;
 }
+.carousel-caption {
+  right: auto;
+}
+.caption-element-1 {
+  background-color: red;
+  font-style: italic;
+  font-size: 24px;
+}
+.caption-element-2 {
+  font-size: 36px;
+  color: red;
+  background-color: white;
+  padding: 15px 10px;
+}
+
 
 .banner-top {
   h6 {
@@ -188,7 +298,78 @@ body {
   color: $main-color;
   font-size: 25px;
 }
-
+.banner-item {
+  .banner-title {
+    transition: 0.6s;
+    font-size: 16px;
+  }
+  &:hover {
+    .banner-icon {
+      color: white;
+    }
+    .icon-circle-overlay {
+      width: 90px;
+      height: 90px;
+      opacity: 1;
+      transition: 0.4s;
+    }
+    .banner-title{
+      color: $main-color;
+      transition: 0.6s;
+    }
+  }
+}
+.icon-circle {
+  border-radius: 50%;
+  width:90px;
+  height: 90px;
+  border: 1px solid $main-color;
+  position: relative;
+  transition: 0.4s;
+  i {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .icon-circle-overlay {
+    position: absolute;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    border: $border-transparent;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: $main-color;
+    z-index: 2;
+    opacity: 0;
+    transition: 0.4s;
+  }
+}
+.services-icon {
+  font-size: 25px;
+  color: white;
+}
+.services-content{
+  padding-bottom: 40px;
+  .services-title {
+    font-size: 16px;
+    transition: 0.6s;
+    color: $text-grey;
+  }
+  .services-description{
+    color: $text-grey;
+    font-size: 14px;
+  }
+  &:hover{
+    .services-title{
+      color: $main-color;
+      transition: 0.6s;
+    }
+  }
+}
 #web_bar{
   background-color: rgb(11, 172, 184);
 }
@@ -310,10 +491,8 @@ body {
   animation-fill-mode: both;
 }
 
- .slide-in-left-animation {
-   animation-name: slide-in-left-animation;
-   animation-fill-mode: both;
- }
+
+
 .counter {
   animation-duration: 1s;
   text-align: center;
