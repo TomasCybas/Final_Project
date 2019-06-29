@@ -23,10 +23,21 @@ body {
   .top-bar-nav i {
     margin-right: 5px; }
 
+.top-bar-social .nav-item {
+  position: relative; }
+
 .top-bar-social a {
   text-decoration: none;
   color: #777777;
   font-size: 12px; }
+
+.top-bar-social .social-link-overlay {
+  opacity: 1;
+  position: absolute;
+  right: 0;
+  font-style: italic;
+  font-size: 11px;
+  background: #1ccdca; }
 
 .navbar-expand-lg {
   font-size: 14px; }

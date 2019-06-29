@@ -44,10 +44,21 @@ body {
 }
 
 .top-bar-social {
+  .nav-item {
+    position: relative;
+  }
   a {
     text-decoration: none;
     color: $text-grey;
     font-size: 12px;
+  }
+  .social-link-overlay{
+    opacity: 1;
+    position: absolute;
+    right: 0;
+    font-style: italic;
+    font-size: 11px;
+    background: $main-color;
   }
 
 }
