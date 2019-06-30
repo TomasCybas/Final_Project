@@ -1,11 +1,13 @@
 "use strict";
 
 function myMap() {
+    var location = {lat: 55.730521, lng: 21.080492};
     var mapProp = {
-        center: new google.maps.LatLng(51.508742, -0.120850),
-        zoom: 5,
+        center: location,
+        zoom: 15,
     };
     var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    var marker = new google.maps.Marker({ position: location, map: map})
 }
 
 
@@ -136,8 +138,6 @@ function runProgressBars() { //handles animation for progress bars
 
     }
 }
-
-
 
 function ajax(url, callBack) {
     var xhttp = new XMLHttpRequest();
