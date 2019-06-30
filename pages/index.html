@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-<div class="container-fluid top-bar">
+<div id="top" class="container-fluid top-bar py-0">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-8 float-md-left pb-2 pb-md-0">
                 <ul class="nav top-bar-nav justify-content-center justify-content-md-start">
                     <li class="nav-item">
                         <div class="hover-dropdown dropdown show" >
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            <a href="#" class="dropdown-toggle top-bar-item" data-toggle="dropdown" aria-haspopup="true"
                                aria-expanded="false">
                                 <i class="fas fa-globe-americas"></i><span>English</span>
                             </a>
@@ -39,21 +39,26 @@
 
                     </li>
                     <li class="nav-item">
-                        <a href="#"><i class="fas fa-sign-in-alt"></i><span>Login</span></a>
+                        <a href="#" class="top-bar-item"><i class="fas fa-sign-in-alt"></i><span>Login</span></a>
 
                     </li>
                     <li class="nav-item d-none d-lg-block">
-                        <i class="fas fa-phone-alt"></i><span>Call us: (123) 456 - 7890</span>
+                        <div class="top-bar-item">
+                            <i class="fas fa-phone-alt"></i><span>Call us: (123) 456 - 7890</span>
+                        </div>
+
                     </li>
                     <li class="nav-item d-none d-lg-block">
-                        <i class="far fa-comment"></i><span>Support: (123) 456 - 7890</span>
+                        <div class="top-bar-item">
+                            <i class="far fa-comment"></i><span>Support: (123) 456 - 7890</span>
+                        </div>
                     </li>
                 </ul>
             </div>
             <div class="col-12 col-md-4 float-md-right pt-2 pt-md-0">
                 <ul class="nav top-bar-social justify-content-center justify-content-md-end">
                     <li class="nav-item px-2">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="top-bar-social-item"><i class="fab fa-facebook-f"></i></a>
                         <div class="social-link-overlay">
                             <p>
                                 Facebook
@@ -61,19 +66,44 @@
                         </div>
                     </li>
                     <li class="nav-item px-2">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="top-bar-social-item"><i class="fab fa-twitter"></i></a>
+                        <div class="social-link-overlay">
+                            <p>
+                                Twitter
+                            </p>
+                        </div>
                     </li>
                     <li class="nav-item px-2">
-                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                        <a href="#" class="top-bar-social-item"><i class="fab fa-dribbble"></i></a>
+                        <div class="social-link-overlay">
+                            <p>
+                                Dribble
+                            </p>
+                        </div>
                     </li>
                     <li class="nav-item px-2">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="top-bar-social-item"><i class="fab fa-linkedin-in"></i></a>
+                        <div class="social-link-overlay">
+                            <p>
+                                LinkedIn
+                            </p>
+                        </div>
                     </li>
                     <li class="nav-item px-2">
-                        <a href="#"><i class="fab fa-vimeo-v"></i></a>
+                        <a href="#" class="top-bar-social-item"><i class="fab fa-vimeo-v"></i></a>
+                        <div class="social-link-overlay">
+                            <p>
+                                Vimeo
+                            </p>
+                        </div>
                     </li>
                     <li class="nav-item px-2">
-                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="top-bar-social-item"><i class="fab fa-discord"></i></a>
+                        <div class="social-link-overlay reverse">
+                            <p>
+                                Discord
+                            </p>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -81,6 +111,9 @@
     </div>
 </div>
 <!--END TOPBAR-->
+<div class="container-fluid px-0 d-block d-md-none">
+    <button id="btn-hide-top" class="btn"><i class="fas fa-chevron-up"></i></button>
+</div>
 <header class="sticky-top">
     <!--BEGIN TOPBAR-->
     <!--BEGIN NAVIGATION-->
@@ -642,12 +675,12 @@
                 <div class="circle"></div>
             </div>
             <div id="accordion">
-                <div class="card">
+                <div class="card custom-card active">
                     <div class="card-header" id="headingOne">
                         <h5 class="mb-0">
-                            <button class="btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                            <button class="btn accordion-btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                                     aria-controls="collapseOne">
-                                Collapsible Group Item #1
+                                <span><i class="far fa-user"></i></span>Customer services 24/7
                             </button>
                         </h5>
                     </div>
@@ -663,12 +696,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card custom-card">
                     <div class="card-header" id="headingTwo">
                         <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                            <button class="btn accordion-btn collapsed" data-toggle="collapse" data-target="#collapseTwo"
                                     aria-expanded="false" aria-controls="collapseTwo">
-                                Collapsible Group Item #2
+                                <span><i class="far fa-heart"></i></span>
+                                Integrity and honesty
                             </button>
                         </h5>
                     </div>
@@ -684,12 +718,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card custom-card">
                     <div class="card-header" id="headingThree">
                         <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                            <button class="btn accordion-btn collapsed" data-toggle="collapse" data-target="#collapseThree"
                                     aria-expanded="false" aria-controls="collapseThree">
-                                Collapsible Group Item #3
+                                <span><i class="fas fa-check"></i></span>
+                                The best sales on the country
                             </button>
                         </h5>
                     </div>
@@ -871,6 +906,16 @@
     </div>
 </section>
 <section class="container-fluid py-5">
+    <div class="section-title">
+        <h3 class="py-5 text-center">
+            PRICING <span class="highlight">PLANS</span>
+        </h3>
+        <div class="line"></div>
+        <div class="underline"></div>
+        <div class="icon bg-white">
+            <i class="fas fa-briefcase"></i>
+        </div>
+    </div>
     <div id="plans_section" class="container py-5 mx-auto row">
         <!--FILLED BY JS-->
     </div>

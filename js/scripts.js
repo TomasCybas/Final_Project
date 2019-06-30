@@ -8,8 +8,32 @@ function myMap() {
     var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 }
 
-// FUNCTION TO STOP VIDEO PLAYBACK ON MODAL CLOSE
-$(document).ready(function () {
+
+var topBarHidden = false;
+
+$('#btn-hide-top').on('click', function(){
+    if (topBarHidden === false){
+        $('#top').addClass('d-none');
+        $('#btn-hide-top').html('<i class="fas fa-chevron-down"></i>');
+        topBarHidden = true;
+    } else {
+        $('#top').removeClass('d-none');
+        $('#btn-hide-top').html('<i class="fas fa-chevron-up"></i>');
+        topBarHidden = false
+    }
+});
+
+$('.card').on('show.bs.collapse hide.bs.collapse', function(e){
+    if(e.type === 'show') {
+        $(this).addClass('active');
+    } else {
+        $(this).removeClass('active')
+    }
+});
+
+
+$(function () {
+    // FUNCTION TO STOP VIDEO PLAYBACK ON MODAL CLOSE
     var url = $('#custom_video').attr('src');
     $('#video_modal').on('hide.bs.modal', function () {
         $('#custom_video').attr('src', '')
@@ -17,13 +41,10 @@ $(document).ready(function () {
         .on('show.bs.modal', function () {
             $('#custom_video').attr('src', url)
         });
-});
 
-$(function () {
     ajax('../json/pricing_plans.json', preparePricingPlans);
     handleScrollEvents();
 });
-
 
 function handleScrollEvents() { // handles running numbers and progress bars on load & scroll
     var scrollEvents = {

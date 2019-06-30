@@ -44,25 +44,64 @@ body {
 }
 
 .top-bar-social {
+  padding: 5px 0;
+  .top-bar-social-item {
+    display: block;
+    padding: 5px 0;
+  }
   .nav-item {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
     position: relative;
+    transition: 0.6s;
+    &:hover {
+      background: #19b7b4;
+      transition: 0.6s;
+      .social-link-overlay {
+        transition: 0.6s;
+        left: 23px;
+        opacity: 1;
+        z-index: 1;
+        &.reverse {
+          left: -49px;
+          border-top-left-radius: 3px;
+          border-bottom-left-radius: 3px;
+        }
+      }
+    }
   }
   a {
     text-decoration: none;
     color: $text-grey;
     font-size: 12px;
   }
-  .social-link-overlay{
-    opacity: 1;
+  .social-link-overlay {
+    color: white;
+    opacity: 0;
     position: absolute;
-    right: 0;
+    left: 0;
+    top: 0;
     font-style: italic;
     font-size: 11px;
     background: $main-color;
+    text-align: center;
+    height: 100%;
+    text-transform: none;
+    z-index: 0;
+    transition: 0.6s;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    p {
+      padding: 6px 6px;
+      margin: 0;
+    }
   }
 
 }
-
+.top-bar-item {
+  display: block;
+  padding: 10px 0;
+}
 
 .navbar-expand-lg {
   font-size: 14px;
@@ -92,6 +131,22 @@ body {
         color: $main-color;
       }
     }
+  }
+}
+#btn-hide-top {
+  background: white;
+  width: 100%;
+  border-bottom: 1px solid #e4e4e4;
+  color: $main-color;
+  border-radius: 0;
+  padding: 4px;
+  font-size: 12px;
+  &:hover {
+    color: $main-color;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: none
   }
 }
 
@@ -493,6 +548,45 @@ body {
     }
   }
 }
+
+.custom-card {
+  margin-bottom: 5px;
+  border-radius: 0;
+  .card-header{
+    background-color: white;
+    color: $text-grey;
+    padding: 0;
+    transition: 0.6s;
+  }
+  &.active {
+    .card-header{
+      background-color: $main-color;
+      color: white;
+      .accordion-btn {
+        i {
+          color: inherit;
+        }
+      }
+    }
+  }
+  .accordion-btn {
+    width: 100%;
+    text-align: left;
+    color: inherit;
+    text-transform: uppercase;
+    transition: 0.6s;
+    i {
+      color: #d0cdcd;
+      padding: 0 10px;
+    }
+    &:focus{
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}
+
+
 @keyframes slide-down-animation {
   from {opacity: 0; transform: translate3d(0, -100%, 0);}
   to {opacity: 1; transform: translate3d(0, 0, 0);}
