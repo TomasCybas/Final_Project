@@ -2,6 +2,26 @@ body {
   font-family: 'Open Sans', sans-serif;
   box-sizing: border-box; }
 
+@keyframes slide-down-animation {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0); }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); } }
+
+.slide-down-animation {
+  animation-name: slide-down-animation;
+  animation-fill-mode: both; }
+
+@keyframes slide-in-right-animation {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0); }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); } }
+
 .bg-main {
   background: #1ccdca; }
 
@@ -73,21 +93,25 @@ body {
   display: block;
   padding: 10px 0; }
 
+.carousel-control {
+  color: #1ccdca; }
+
 .navbar-expand-lg {
   font-size: 14px; }
   .navbar-expand-lg .form-control {
     width: 200px; }
-  .navbar-expand-lg .navbar-nav .nav-link {
-    padding: 25px 15px; }
-  .navbar-expand-lg .navbar-nav li {
+  .navbar-expand-lg .nav-link {
+    padding-top: 15px;
+    padding-bottom: 15px; }
+  .navbar-expand-lg li {
     font-size: 14px;
     text-transform: uppercase;
     font-weight: bold; }
-  .navbar-expand-lg .navbar-nav a {
+  .navbar-expand-lg a {
     border-radius: 3px;
     border: 1px solid transparent;
     color: #555; }
-    .navbar-expand-lg .navbar-nav a:hover {
+    .navbar-expand-lg a:hover {
       transition: 1s;
       color: #1ccdca; }
 
@@ -233,18 +257,62 @@ body {
   transition: background-color; }
 
 .carousel-caption {
-  right: auto; }
+  right: auto;
+  text-align: left; }
 
 .caption-element-1 {
-  background-color: red;
+  color: white;
+  background-color: #e74c3c;
+  text-transform: uppercase;
   font-style: italic;
-  font-size: 24px; }
+  font-size: 10px;
+  padding: 0 0 0 5px;
+  width: fit-content;
+  animation-name: slide-in-right-animation;
+  animation-duration: 2s;
+  animation-fill-mode: both; }
+  .caption-element-1 span {
+    margin: 0;
+    padding: 0 5px; }
+  .caption-element-1 .caption-btn {
+    background-color: #cf2c1d;
+    color: white;
+    font-size: inherit; }
 
 .caption-element-2 {
-  font-size: 36px;
-  color: red;
+  font-weight: bold;
+  width: fit-content;
+  color: #e74c3c;
   background-color: white;
-  padding: 15px 10px; }
+  font-size: 16px;
+  padding: 10px 5px;
+  animation-name: slide-in-right-animation;
+  animation-fill-mode: both;
+  animation-duration: 2s;
+  animation-delay: 0.3s;
+  text-transform: uppercase; }
+
+.caption-element-3 {
+  width: fit-content;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-family: "Kalam", cursive;
+  font-size: 18px;
+  padding: 11px 20px;
+  animation-name: slide-in-right-animation;
+  animation-fill-mode: both;
+  animation-duration: 2s;
+  animation-delay: 0.6s; }
+
+.caption-element-4 {
+  padding-top: 25px;
+  animation-name: slide-in-right-animation;
+  animation-fill-mode: both;
+  animation-duration: 2s;
+  animation-delay: 0.9s; }
+  .caption-element-4 .purchase-now-btn {
+    background-color: white;
+    color: #1ccdca; }
 
 .banner-top h6 {
   font-weight: bold;
@@ -433,16 +501,8 @@ body {
       outline: none;
       box-shadow: none; }
 
-@keyframes slide-down-animation {
-  from {
-    opacity: 0;
-    transform: translate3d(0, -100%, 0); }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0); } }
-
-.slide-down-animation {
-  animation-name: slide-down-animation;
+.slide-in-right-animation {
+  animation-name: slide-in-right-animation;
   animation-fill-mode: both; }
 
 .counter {
@@ -463,6 +523,46 @@ body {
 
 #googleMap {
   border-top: 1px solid white; }
+
+.img-link {
+  overflow: hidden;
+  display: block;
+  position: relative;
+  text-decoration: none; }
+  .img-link .zoom-overlay {
+    background-color: #1ccdca;
+    z-index: 1;
+    opacity: 0;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.6s; }
+    .img-link .zoom-overlay i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 40px;
+      color: white;
+      transition: 0.6s; }
+  .img-link img {
+    transition: 1s; }
+  .img-link:hover img {
+    transform: scale(1.5);
+    transition: 1s; }
+  .img-link:hover .zoom-overlay {
+    opacity: 0.6;
+    height: 50px;
+    width: 50px;
+    transition: 0.6s; }
+    .img-link:hover .zoom-overlay i {
+      transform: translate(-50%, -50%) rotateZ(45deg);
+      font-size: 24px;
+      transition: 0.6s; }
 
 .subsection-title {
   position: relative;
@@ -566,7 +666,6 @@ body {
   border-radius: 50%; }
 
 .btn-black {
-  /*TODO: works the other way around, figure out how to fix*/
   background-color: black;
   color: white;
   transition: 0.4s ease-out 0.4s;
@@ -896,12 +995,20 @@ hr {
   border-bottom: solid 2.8284px #1ccdca;
   border-left: solid 2.8284px #1ccdca; }
 
-.navbar-brand {
-  margin: 0 auto; }
-
-.carousel-control {
-  color: #1ccdca; }
+@media (max-width: 320px) {
+  .cart-menu {
+    left: -130px; } }
 
 @media (min-width: 992px) {
   .carousel-control {
-    font-size: 40px; } }
+    font-size: 40px; }
+  .caption-element-1 {
+    font-size: 16px;
+    padding: 0 0 0 5px; }
+  .caption-element-2 {
+    font-size: 36px;
+    padding: 15px 10px; } }
+
+@media (min-width: 1200px) {
+  .navbar-expand-lg .nav-link {
+    padding: 25px 15px; } }
