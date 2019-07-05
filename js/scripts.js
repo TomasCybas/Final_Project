@@ -183,11 +183,12 @@ function preparePricingPlans(response) {
             for (let j in plans[i].benefits) {
                 if (plans[i].benefits.hasOwnProperty(j)) {
                     let indicator = '<i class="fas fa-times px-2 text-danger"></i>';
-                    if (plans[i].benefits[j]) {
+                    if (plans[i].benefits[j].included) {
                         indicator = '<i class="fas fa-check px-2 text-success"></i>';
                     }
                     html += '<tr><td class="text-capitalize">' +
-                        indicator + j + '</td></tr>'
+                        indicator + plans[i].benefits[j].name + '</td></tr>';
+                    console.log(plans[i].benefits[j].name)
                 }
             }
             html += '</tbody><tfoot><td class="py-3"><button class="btn btn-plan"><i class="fas fa-shopping-cart px-2">' +

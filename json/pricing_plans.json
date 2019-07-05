@@ -5,14 +5,39 @@
     "price" : "573",
     "periodicity" : "monthly",
     "active": false,
-    "benefits" : {
-      "free setup" : true,
-      "50 websites" : false,
-      "55GB storage" : false,
-      "50GB bandwith" : true,
-      "9 months support" : false,
-      "unlimited subdomains" : true
-    }
+    "benefits" : [
+      {
+        "id": 1,
+        "name": "free setup",
+        "included": true
+      },
+      {
+        "id": 2,
+        "name": "50 websites",
+        "included": false
+      },
+      {
+        "id": 3,
+        "name": "55GB storage",
+        "included": false
+      },
+      {
+        "id": 4,
+        "name": "50GB bandwith",
+        "included": true
+      },
+      {
+        "id": 5,
+        "name": "9 months support",
+        "included": false
+      },
+      {
+        "id": 6,
+        "name": "unlimited subdomains",
+        "included": true
+      }
+    ]
+
   },
   {
     "id": 2,
@@ -20,14 +45,39 @@
     "price": "234",
     "periodicity": "monthly",
     "active": true,
-    "benefits": {
-      "free setup": true,
-      "50 websites": false,
-      "55GB storage": true,
-      "50GB bandwith": true,
-      "9 months support": false,
-      "unlimited subdomains": true
-    }
+    "benefits" : [
+      {
+        "id": 1,
+        "name": "free setup",
+        "included": true
+      },
+      {
+        "id": 2,
+        "name": "50 websites",
+        "included": false
+      },
+      {
+        "id": 3,
+        "name": "55GB storage",
+        "included": false
+      },
+      {
+        "id": 4,
+        "name": "50GB bandwith",
+        "included": true
+      },
+      {
+        "id": 5,
+        "name": "9 months support",
+        "included": false
+      },
+      {
+        "id": 6,
+        "name": "unlimited subdomains",
+        "included": true
+      }
+    ]
+
   },
   {
     "id": 3,
@@ -35,13 +85,38 @@
     "price": "1234",
     "periodicity": "monthly",
     "active": false,
-    "benefits": {
-      "free setup": true,
-      "50 websites": true,
-      "55GB storage": true,
-      "50GB bandwith": true,
-      "9 months support": true,
-      "unlimited subdomains": true
-    }
+    "benefits" : [
+      {
+        "id": 1,
+        "name": "free setup",
+        "included": true
+      },
+      {
+        "id": 2,
+        "name": "50 websites",
+        "included": false
+      },
+      {
+        "id": 3,
+        "name": "55GB storage",
+        "included": false
+      },
+      {
+        "id": 4,
+        "name": "50GB bandwith",
+        "included": true
+      },
+      {
+        "id": 5,
+        "name": "9 months support",
+        "included": false
+      },
+      {
+        "id": 6,
+        "name": "unlimited subdomains",
+        "included": true
+      }
+    ]
+
   }
 ]}
